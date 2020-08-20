@@ -14,9 +14,14 @@
 <?php endif; ?>
 
 
-___INFO___
+<?php
 
+add_hook('ClientAreaPrimaryNavbar', 1, function($primaryNavbar)
 {
-  "displayName": "Example Template",
-  "categories": ["AFFILIATE_MARKETING", "ADVERTISING"]
-}
+   $primaryNavbar->addChild('terms', array(
+       'uri' => 'terms.php',
+       'label' => Lang::trans('ordertos'),
+       'order' => 100,
+       'icon' => 'fa-gavel',
+   ));
+});
