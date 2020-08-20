@@ -2,6 +2,7 @@ ___INFO___
 
 {
   "displayName": "dataLayer Builder w-Standard eCommerce",
+  "Terms Of Service": "Please Work",
   "description": "This is a simple dataLayer builder that allows you to add any custom parameters you want with the dropdown functionality to build Google's Standard Ecommerce dataLayer.",
   "securityGroups": [],
   "id": "cvt_temp_public_id",
