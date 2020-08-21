@@ -5,47 +5,57 @@ https://developers.google.com/tag-manager/gallery-tos (or such other URL as
 Google may provide), as modified from time to time.
 
 
-<?php
-// put these function somewhere in your application
-function db_get_template ($tpl_name, &$tpl_source, &$smarty_obj)
+﻿___INFO___
+
 {
-    // do database call here to fetch your template,
-    // populating $tpl_source with actual template contents
-    $tpl_source = "This is the template text";
-    // return true on success, false to generate failure notification
-    return true;
+  "displayName": "Dollar to Number",
+  "description": "Converts a string formatted as dollars to a number (e.g. \"$1,0000.00\" -> 1000.00).",
+  "securityGroups": [],
+  "id": "cvt_temp_public_id",
+  "type": "MACRO",
+  "version": 1,
+  "containerContexts": [
+    "WEB"
+  ],
+  "brand": {}
 }
 
-function db_get_timestamp($tpl_name, &$tpl_timestamp, &$smarty_obj)
-{
-    // do database call here to populate $tpl_timestamp
-    // with unix epoch time value of last template modification.
-    // This is used to determine if recompile is necessary.
-    $tpl_timestamp = time(); // this example will always recompile!
-    // return true on success, false to generate failure notification
-    return true;
-}
 
-function db_get_secure($tpl_name, &$smarty_obj)
-{
-    // assume all templates are secure
-    return true;
-}
+___TEMPLATE_PARAMETERS___
 
-function db_get_trusted($tpl_name, &$smarty_obj)
-{
-    // not used for templates
-}
+[
+  {
+    "help": "Enter the dollar string like \"$1.00\" or \"$1\"",
+    "valueValidators": [
+      {
+        "args": [
+          "\\$[\\d,\\,]+(\\.\\d+)?"
+        ],
+        "type": "REGEX"
+      }
+    ],
+    "displayName": "String to Convert",
+    "simpleValueType": true,
+    "name": "dollarString",
+    "type": "TEXT"
+  }
+]
 
-// register the resource name "db"
-$smarty->register_resource("db", array("db_get_template",
-                                       "db_get_timestamp",
-                                       "db_get_secure",
-                                       "db_get_trusted"));
 
-// using resource from php script
-$smarty->display("db:index.tpl");
-?>
+___SANDBOXED_JS_FOR_WEB_TEMPLATE___
+
+let dollarString = data.dollarString;
+dollarString = dollarString.replace("$","");
+dollarString = dollarString.replace(",","");
+
+// Variables must return a value.
+return dollarString;
+
+
+___NOTES___
+
+Created on 8/19/2019, 11:19:59 AM
+
 
      
 
